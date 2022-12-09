@@ -18,14 +18,30 @@
 
 ### 1、[html5声明](https://man.ilovefishc.com/pageHTML5/!DOCTYPE.html)
 
- `<!DOCTYPE html>`
+ `<!DOCTYPE html>`是一个声明，表示该文档是由 HTML5 进行编写的。
 
-<!DOCTYPE html>是一个声明，表示该文档是由 HTML5 进行编写的。
-在 HTML 4.01 中，<!DOCTYPE> 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。
-HTML5 不基于 SGML，所以不需要引用 DTD。
-从html5开始到后期所有版本，<!DOCTYPE>声明将一直使用该格式
+ 在 HTML 4.01 中， 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。
 
-### 2、[head标签](https://man.ilovefishc.com/pageHTML5/head.html)
+ HTML5 不基于 SGML，所以不需要引用 DTD。
 
-""
+ 从html5开始到以后所有版本，声明将一直使用该格式
+
+
+### 2、[标签`<head>`](https://man.ilovefishc.com/pageHTML5/head.html)
+
+`<head>` 标签用于定义文档的头部，它是所有头部元素的容器。
+
+`<head>` 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等等。
+
+`<head>`标签中可使用的标签有：`<base>`,`<link>`,`<meta>`,`<script>`,`<title>`。
+
+`<title>`是head部分中唯一必需的标签。
+
+### 3、[标签`<title>`](https://man.ilovefishc.com/pageHTML5/title.html)
+
+`<title>`标签用于定义文档的标题。
+
+浏览器通常将其内容显示在浏览器窗口的标题栏或状态栏上。
+
+如果把网页加入用户的链接列表或者收藏夹、书签列表，`<title>`元素的内容将成为该网页链接的默认名称。
 
