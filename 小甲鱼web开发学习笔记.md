@@ -10,6 +10,8 @@
 
 [CSS3速查宝典](http://man.fishc.com/css3)
 
+[课后作业](https://fishc.com.cn/forum.php?mod=forumdisplay&fid=354&filter=typeid&typeid=730)
+
 ---
 
 ## **第一课**
@@ -106,3 +108,90 @@ p 元素会自动在其前后创建一些空白。浏览器会自动添加这些
 #### 范例：
 
 ![image-20221211221434140](./images//image-20221211221434140.png)
+
+### [课后作业](https://fishc.com.cn/forum.php?mod=viewthread&tid=107172&extra=page%3D1%26filter%3Dtypeid%26typeid%3D730)
+
+## 第二课：[<meta>标签的用法](https://man.ilovefishc.com/pageHTML5/meta.html)
+
+### 1、定义
+
+> `<meta>` 标签用于描述页面内容，关键词，作者，最新修订时间以及其它元信息。
+
+`<meta>`标签内容被称为**元信息**，不会显示在网页中，但是可以被爬虫解析；
+
+元信息可以作为设定浏览器加载显示的属性，也可以用于便于百度谷歌等搜索引擎收录。
+
+### 2、属性
+
+|    属性    |                              值                              |                             描述                             |
+| :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  charset   |                        character_set                         |                    指定 HTML 文档的编码。                    |
+|  content   |                             text                             |         指定与 `http-equiv` 或 `name` 属性相关的值。         |
+| http-equiv |             content-type、default-style、refresh             | content-type：另一种声明 HTML 文档作用字符编码的方法（`<meta http-equiv="content-type" content="text/html charset=UTF-8">`）。 default-style：指定页面优先使用的样式表。 refresh：以秒为单位指定一个时间间隔，在此时间过去之后将从服务器重新载入当前页面。也可以另行指定一个 URL 让浏览器载入。 |
+|    name    | application-name、author、description、generator、keywords、viewport | application-name：当前页所属 Web 应用系统的名称。 author：当前页的作者名。 description：当前页的内容描述。 generator：用来生成 HTML 的软件名称。 keywords：当前页的关键词。 viewport：网页尺寸自适应。 |
+
+### 3、注意事项
+
+> `<meta>`标签位于`<head>`标签内部；
+>
+> **在写`<name>`或者`<http-equiv>`属性后必须加上`<content>`属性**
+>
+> 想要实现网页尺寸在各终端上的自适应显示，应该通过`<meta>`设置如下：
+>
+> ```html
+> <meta name="viewport" content="width=device-width,initial-scale=1.0">
+> ```
+
+### 4、实例
+
+实例1：指定网页编码**（重要！没有此元信息会导致上传到服务器端的网页中文乱码）**
+
+```html
+<meta charset="UTF-8">
+```
+
+实例2：为搜索引擎提供关键词便于搜索
+
+```html
+<meta name="keywords" content="web开发,html5,编程">
+```
+
+实例3：描述网页内容
+
+```html
+<meta name="descrption" content="学习web开发的好玩意儿">
+```
+
+实例4：定义网页作者
+
+```html
+<meta name="author",content="DC">
+```
+
+实例5：设置网页在各终端自适应显示
+
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+```
+
+实例6：设置每3秒就自动刷新并跳转到百度
+
+```html
+<meta http-equiv="refresh" content="3;https://www.baidu.com/">
+```
+
+### [课后作业](https://www.baidu.com/)
+
+1、操作系统是使用反斜杠（\）做分隔符，在 HTML 中，我们可以使用它来代替斜杠（/）吗？
+
+> 答案：不能！路径只能用斜杠(/)作为分隔符。
+
+2、实例5中content中参数是什么含义？
+
+> 答案：`<width=device-width>`意思是获取当前设备的屏幕宽度并按此进行页面设置；`<initial-scale=1.0>`表示该页面初始加载时，页面的缩放级别。
+
+3、学会绘制DOM树
+
+![image-20221217183401797](images/image-20221217183401797.png)
+
+4、动手练习：实现网页尺寸自适应；添加关键词、内容描述、作者信息；实现一个带超链接的图片
