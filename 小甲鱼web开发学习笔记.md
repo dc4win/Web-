@@ -195,3 +195,22 @@ p 元素会自动在其前后创建一些空白。浏览器会自动添加这些
 ![image-20221217183401797](images/image-20221217183401797.png)
 
 4、动手练习：实现网页尺寸自适应；添加关键词、内容描述、作者信息；实现一个带超链接的图片
+
+```html
+<!Doctype html>
+<html>
+<head>
+	<title>meta学习</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="keywords" content="DC,学习web">
+	<meta name="description" content="这是DC学习web开发的meta测试">
+	<meta name="author" content="DC">
+</head>
+<body>
+	<p>点击下图可以跳转到百度搜索</p>
+	<a href="https://www.baidu.com/" target="_blank"><img src="../images/image-20221217183401797.png" alt="DOM树" width="256px" height="256px"></a>
+</body>
+</html>
+```
+
