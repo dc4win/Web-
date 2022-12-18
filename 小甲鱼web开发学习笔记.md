@@ -214,3 +214,128 @@ p 元素会自动在其前后创建一些空白。浏览器会自动添加这些
 </html>
 ```
 
+## 第三课  [网页样式<style>](https://man.ilovefishc.com/pageHTML5/style.html)
+
+### 1、定义
+
+> `<style>`用于为html文档添加自定义样式信息。一篇文档中可以有多个 `<style>`元素，可以出现在文档的各个部分。
+
+### 2、属性
+
+|                             属性                             |                              值                              |                             描述                             |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  [`media`](https://man.ilovefishc.com/pageHTML5/media.html)  | screen、tty、tv、projection、handheld、print、braille、aural、all |                     指定样式适用的媒体。                     |
+| [`scoped`](https://man.ilovefishc.com/pageHTML5/scoped.html) |                            scoped                            | 指定样式的作用范围（如果使用该属性，则样式仅仅应用到 style 元素的父元素及其子元素）。 |
+|   [`type`](https://man.ilovefishc.com/pageHTML5/type.html)   |                           text/css                           |                       指定样式的类型。                       |
+
+#### 	2.1 [media属性](https://man.ilovefishc.com/pageHTML5/media.html)
+
+##### 		2.1.1 定义
+
+> `media`属性用于指定样式适用的媒体或设备。
+
+##### 		2.1.2 设备属性
+
+|     值     |                        描述                        |
+| :--------: | :------------------------------------------------: |
+|    all     |            将样式用于所有设备（默认）。            |
+|   aural    |               将样式用于语音合成器。               |
+|  braille   |                将样式用于盲文设备。                |
+|  handheld  |     将样式用于手持设备（小屏幕、有限的带宽）。     |
+| projection |                 将样式用于投影机。                 |
+|   print    |           将样式用于打印预览或打印页面。           |
+|   screen   |               将样式用于计算机屏幕。               |
+|    tty     |        将样式用于电传打字机之类的等宽设备。        |
+|     tv     | 将样式用于电视机（低分辨率、有限的屏幕翻滚能力）。 |
+
+##### 		2.1.3 运算符
+
+|  值  |      描述      |
+| :--: | :------------: |
+| and  | 逻辑与操作符。 |
+| not  | 逻辑非操作符。 |
+|  ,   | 逻辑或操作符。 |
+
+##### 		2.1.4 特性
+
+|         值          |                             描述                             |
+| :-----------------: | :----------------------------------------------------------: |
+|        width        | 规定目标显示区域的宽度。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (min-width:500px)" |
+|       height        | 规定目标显示区域的高度。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (max-height:700px)" |
+|    device-width     | 规定目标显示器/纸张的宽度。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (device-width:500px)" |
+|    device-height    | 规定目标显示器/纸张的高度。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (device-height:500px)" |
+|     orientation     | 规定目标显示器/纸张的方向。可能的值："portrait" 或 "landscape" 例子：media="all and (orientation: landscape)" |
+|    aspect-ratio     | 规定目标显示区域的宽度/高度比。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (aspect-ratio:16/9)" |
+| device-aspect-ratio | 规定目标显示器/纸张的 device-width/device-height 比率。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (aspect-ratio:16/9)" |
+|        color        | 规定目标显示器的 bits/color。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (color:3)" |
+|     color-index     | 规定目标显示器可以处理的颜色数。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (min-color-index:256)" |
+|     monochrome      | 规定单色帧缓冲中的 bits/pixel。可使用 "min-" 和 "max-" 前缀。 例子：media="screen and (monochrome:2)" |
+|     resolution      | 规定目标显示器/纸张的像素密度 (dpi 或 dpcm)。可使用 "min-" 和 "max-" 前缀。 例子：media="print and (resolution:300dpi)" |
+|        scan         | 规定 TV 显示器的扫描方式。可能的值："progressive" 和 "interlace"。 例子：media="tv and (scan:interlace)" |
+|        grid         | 规定输出设备是否是网格或位图。可能的值："1" 为网格，否则为 "0"。 例子：media="handheld and (grid:1)" |
+
+#### 	2.2 [scoped属性](https://man.ilovefishc.com/pageHTML5/scoped.html)
+
+#####  		2.2.1 定义
+
+> scoped属性用于指定样式的作用范围；是HTML5中的新属性，当前只有Firefox支持。该属性是bool属性，如果使用该属性，则样式仅仅应用到style元素的父元素及其子元素。
+
+##### 		2.2.2 实例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）</title>
+    <style type="text/css">
+        h1 {color:green;}
+        p {color:black;}
+    </style>
+</head>
+<body>
+    <div>
+        <style type="text/css" scoped>
+            h1 {color:red;}
+            p {color:blue;}
+        </style>
+        <h1>这个标题是红色的</h1>
+        <p>这个段落是蓝色的。</p>
+    </div>
+
+    <h1>这个标题是绿色的</h1>
+    <p>这个段落是黑色的。</p>
+    <p><b>注意:</b> 只有 Firefox 属性支持 scoped 属性 。</p>
+</body>
+</html>
+```
+
+![image-20221218134846759](images/image-20221218134846759.png)
+
+#### 	2.3 type属性
+
+##### 		2.3.1 定义
+
+> type属性指定style样式的类型。目前，浏览器样式支持的机制只有CSS一种，所以值总是text/css。
+
+##### 		2.3.2 实例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）</title>
+    <style type="text/css">
+        h1 {color:red;}
+        p {color:blue;}
+    </style>
+</head>
+<body>
+    <h1>FishC.com</h1>
+    <p>零基础入门学习Web开发（HTML5 & CSS3）</p>
+</body>
+</html>
+```
+
+![image-20221218135621426](images/image-20221218135621426.png)
