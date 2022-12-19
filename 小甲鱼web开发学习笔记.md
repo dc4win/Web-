@@ -339,3 +339,80 @@ p 元素会自动在其前后创建一些空白。浏览器会自动添加这些
 ```
 
 ![image-20221218135621426](images/image-20221218135621426.png)
+
+## 第四课 [link和base元素](https://www.bilibili.com/video/av21786264/?p=6&vd_source=bcc1d9a7193b5cc64f0719559c9e2c2f)
+
+### 1、link标签
+
+#### 	1.1 定义
+
+> `<link>`标签用于指定外部资源，最常见的就是链接css样式表
+
+#### 	1.2 属性
+
+|                            属性                            |                              值                              |                   描述                   |
+| :--------------------------------------------------------: | :----------------------------------------------------------: | :--------------------------------------: |
+|                            href                            |                             URL                              |          指定被链接资源的 URL。          |
+|                          hreflang                          |                        language_code                         |        指定被链接资源使用的语言。        |
+|                           sizes                            |                         HeightxWidth                         | 指定图标的大小（比如 `sizes="16x16"`）。 |
+| [`media`](http://man.ilovefishc.com/pageHTML5/media1.html) |                         media_query                          |  指定被链接的资源将被显示到什么设备上。  |
+|   [`rel`](http://man.ilovefishc.com/pageHTML5/rel.html)    | alternate、author、help、icon、licence、next、pingback、prefetch、prev、search、sidebar、stylesheet、tag |   指定当前文档与被链接资源之间的关系。   |
+|  [`type`](http://man.ilovefishc.com/pageHTML5/type1.html)  |                          MIME_type                           |       规定被链接文档的 MIME 类型。       |
+
+#### 	1.3 示例
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）</title>
+    <link rel="stylesheet" type="text/css" href="css/fishc.css" >
+</head>
+<body>
+    <h1>我通过外部样式表进行格式化。</h1>
+    <p>我也一样！</p>
+</body>
+</html>
+```
+
+同级目录下的css文件
+
+```css
+body{
+    color: green;
+}
+```
+
+### 2、[base标签](http://man.ilovefishc.com/pageHTML5/base.html)
+
+#### 	2.1 定义
+
+> `<base>` 标签用于设置相对 URL 的解析基准。base 元素可以用来设置一个基准 URL，让 HTML 文档中的相对链接在此基础上进行解析。**必须位于<head>标签内部**
+
+#### 	2.2 属性
+
+|  属性  |                   值                    |                             描述                             |
+| :----: | :-------------------------------------: | :----------------------------------------------------------: |
+|  href  |                   URL                   |          指定该 HTML 文档中所有相对链接的基准 URL。          |
+| target | _blank、_parent、_self、_top、framename | 指定在何处打开超链接。 _blank：在新窗口中打开 _parent：在当前的父窗口中打开，如果不存在父窗口，此选项的行为方式与 _self 等同 _self：当前窗口打开（默认） _top：在整个窗口中打开 framename：在指定的框架中打开 |
+
+#### 	2.3 示例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="../img/" target="_blank">
+</head>
+<body>
+    <img src="logo.png"><br>
+    <p>请注意，已经为图像规定了一个相对地址。<br>由于已经在 head 部分规定了一个基准 URL，浏览器将在上级目录img文件下寻找图片：</p>
+    <p>"http://bbs.fishc.com/template/damei_z14/image/logo.png"</p>
+    <br><br>
+    <p><a href="http://www.fishc.com">鱼C主页</a></p>
+    <p>请注意，链接会在新窗口中打开，即使链接中没有 target="_blank" 属性。<br>这是因为 base 元素的 target 属性已经被设置为 "_blank" 了。</p>
+</body>
+</html>
+```
+
