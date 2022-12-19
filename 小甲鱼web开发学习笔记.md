@@ -416,3 +416,37 @@ body{
 </html>
 ```
 
+## 第五课 <script>标签
+
+### 1、定义
+
+> `<script>`标签用于在HTML文档中添加脚本，例如JavaScript。script 元素既可以直接定义内嵌脚本语句，也可以通过 src 属性引用外部脚本文件。script 元素可以出现在 HTML 文档中的各个部分，一个文档可以包含多个 script 元素。
+
+### 2、属性
+
+|  属性   |     值     |                             描述                             |
+| :-----: | :--------: | :----------------------------------------------------------: |
+|  type   | media_type | 指定所定义或引用的脚本类型（如果使用 JavaScript 脚本，这个属性可以忽略）。 |
+|  async  |   async    | 告诉浏览器异步执行脚本。 注意：该属性只能用于引用外部脚本文件，对内嵌脚本不起作用。 |
+| charset |  charset   | 指定外部脚本文件中使用的字符编码。 注意：该属性只能与 src 属性一起使用。 |
+|  defer  |   defer    | 告诉浏览器延迟执行脚本（直到页面载入并解析完毕后再执行脚本）。 注意：该属性只能用于引用外部脚本文件，对内嵌脚本不起作用。 |
+|   src   |    URL     |                   指定外部脚本文件的 URL。                   |
+
+### 3、实例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）</title>
+</head>
+<body>
+    <script>
+        document.write("鱼C工作室");
+    </script>
+</body>
+</html>
+```
+
+鱼C工作室
