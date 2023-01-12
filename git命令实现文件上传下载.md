@@ -51,3 +51,30 @@
 > 解决方法：在[ip查询网站](https://www.ipaddress.com/)查询`github.global.ssl.fastly.net` 以及`github.com`所对应的ip,并添加到hosts文件(目录：C:\Windows\System32\drivers\etc\hosts)，添加方式：
 >
 > ![image-20221219111703370](images/image-20221219111703370.png)注意：搜索出github.global.ssl.fastly.net有四个ip，可以分别测试使用。
+
+③使用科学上网仍然出现超时现象
+
+> 解决方案：更新设置代理
+>
+> 第一步：取消原代理
+>
+> ```
+> git config --global --unset http.proxy
+> git config --global --unset https.proxy
+> ```
+>
+> 第二步：更新DNS（错误也没问题）
+>
+> ```
+> ipconfig /flushdns
+> ```
+>
+> 第三步：设置代理
+>
+> ```
+>  git config --global https.proxy http://127.0.0.1:1080
+>  git config --global https.proxy https://127.0.0.1:1080
+> ```
+>
+> 地址和端口号在 `windows→设置→代理`中自行查看
+
